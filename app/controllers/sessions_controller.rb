@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
-    client_id = '8238c09d3c3cc43ac6d6'
-    client_secret = '1bd45adb943afbc093f5c3ed259e57ff4c0f4981'
+    client_id = ENV["GITHUB_CLIENT_ID"]
+    client_secret = ENV["GITHUB_SECRET_ID"]
     code = params[:code]
 
     conn = Faraday.new(
