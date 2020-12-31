@@ -1,1 +1,19 @@
 <h1>Welcome, <%= current_user.username %></h1>
+
+<h2>Public Repos:</h2>
+<% @public_repos.each do |repo| %>
+  <h3>Name: <%= repo.name %></h3>
+  <%= link_to 'View Repo', repo.url %>
+  <% if repo.language %>
+    <h3>Language: <%= repo.language %></h3>
+  <% end %>
+<% end %>
+
+<h2>Private Repos:</h2>
+<% @private_repos.each do |repo| %>
+  <h3>Name: <%= repo.name %></h3>
+  <%= link_to 'View Repo', repo.url %>
+  <% if repo.language %>
+    <h3>Language: <%= repo.language %></h3>
+  <% end %>
+<% end %>
